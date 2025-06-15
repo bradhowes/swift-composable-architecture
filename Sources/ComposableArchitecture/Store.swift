@@ -22,12 +22,12 @@ import SwiftUI
 /// }
 /// ```
 ///
-/// …and then use the ``scope(state:action:)-90255`` method to derive more focused stores that can be
+/// …and then use the ``scope(state:action:)`` method to derive more focused stores that can be
 /// passed to subviews.
 ///
 /// ### Scoping
 ///
-/// The most important operation defined on ``Store`` is the ``scope(state:action:)-90255`` method,
+/// The most important operation defined on ``Store`` is the ``scope(state:action:)`` method,
 /// which allows you to transform a store into one that deals with child state and actions. This is
 /// necessary for passing stores to subviews that only care about a small portion of the entire
 /// application's domain.
@@ -54,7 +54,7 @@ import SwiftUI
 /// }
 /// ```
 ///
-/// We can construct a view for each of these domains by applying ``scope(state:action:)-90255`` to
+/// We can construct a view for each of these domains by applying ``scope(state:action:)`` to
 /// a store that holds onto the full app domain in order to transform it into a store for each
 /// subdomain:
 ///
@@ -129,7 +129,7 @@ import SwiftUI
 /// The store performs some basic thread safety checks in order to help catch mistakes. Stores
 /// constructed via the initializer ``init(initialState:reducer:withDependencies:)`` are assumed
 /// to run only on the main thread, and so a check is executed immediately to make sure that is the
-/// case. Further, all actions sent to the store and all scopes (see ``scope(state:action:)-90255``)
+/// case. Further, all actions sent to the store and all scopes (see ``scope(state:action:)``)
 /// of the store are also checked to make sure that work is performed on the main thread.
 ///
 /// ### ObservableObject conformance
